@@ -8,22 +8,21 @@ public class Encripter {
         System.out.println("Enter any String.");
         String pass = in.next();
         String encrip = "";
-        char s;
+        char c;
         int a, i;
         for(i = 0; i<pass.length(); i++){
-            s = pass.charAt(i);
-            a = (int)s + 3;
-            if(s>=97 && s<=119){
-                encrip += (char)a;
-            }
-            else if(s>119 && s<=122) {
+            c = pass.charAt(i);
+            a = (int)c + 3;
+            if(a>90 && a<97){
                 a = a - 26;
-                encrip += (char) a;
             }
-            if(s>122){
-                a = (int)s - 26;
+            else if(a>122) {
+                a = a - 26;
+            }
+            if(a>122){
                 encrip += (char)a;
             }
+            encrip += (char)a;
         }
             System.out.println(encrip);
     }
