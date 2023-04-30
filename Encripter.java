@@ -17,7 +17,7 @@ public class Encripter {
                 encrip += (char)a;
             }
             else if(s>119 && s<=122) {
-                a = ((int)s + 3 )- 26;
+                a = a - 26;
                 encrip += (char) a;
             }
             if(s>122){
