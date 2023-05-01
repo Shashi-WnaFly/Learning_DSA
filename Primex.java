@@ -20,7 +20,6 @@ public class Primex {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter any number to prime or not.");
-//        int n = in.nextInt();
         int i, count = 0;
         for (i = 1; i <= 1000; i++) {
             boolean check = prime(i);
