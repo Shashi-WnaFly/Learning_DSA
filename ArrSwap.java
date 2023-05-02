@@ -8,7 +8,6 @@ public class ArrSwap {
         temp = music[ind1];
         music[ind1] = music[ind2];
         music[ind2] = temp;
-
     }
     public static void main(String[] args) {
         String[] dhun = {"Deepak", "Vikash", "Sanjeet", "Sunny"};
