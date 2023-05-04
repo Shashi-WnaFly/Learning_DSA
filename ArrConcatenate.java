@@ -13,15 +13,13 @@ public class ArrConcatenate {
         System.out.println(Arrays.toString(getConcatenation(tar)));
     }
     public static int[] getConcatenation(int[] nums) {
-        int n = 2*nums.length;
-        int[] ans = new int[n];
-        for(int i = 0; i<n; i++){
-            if(i>=nums.length){
-                ans[i] = nums[i-nums.length];
-            }
-            else{
-            ans[i] = nums[i];
-            }
+        int[] ans = new int[nums.length*2];
+        int i = 0, res = 0;
+        while(i<nums.length*2){
+            if(i==nums.length) res = 0;
+            ans[i] = nums[res];
+            i++;
+            res++;
         }
         return ans;
     }
