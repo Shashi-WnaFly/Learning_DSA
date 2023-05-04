@@ -1,5 +1,8 @@
 package DSA;
-import java.util.*;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
 // build an array from permutation.
 class Solution {
     public static void main(String[] args) {
@@ -10,6 +13,7 @@ class Solution {
         }
         System.out.println(Arrays.toString(buildArray(goa)));
     }
+
     public static int[] buildArray(int[] nums) {
         int[] ans = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
