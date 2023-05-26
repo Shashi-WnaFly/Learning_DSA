@@ -21,9 +21,7 @@ public class FlipImage {
                 flip[i][m] = image[i][k];
                 m++;
             }
-            System.out.println();
         }
-
         return flip;
     }
 
