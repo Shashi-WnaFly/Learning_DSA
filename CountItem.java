@@ -7,7 +7,7 @@ public class CountItem {
         if(ruleKey.equals("color")) col = 1;
         else if(ruleKey.equals("name"))col = 2;
         for(int row = 0; row<items.size(); row++){
-            if(items.get(row).get(col).equals(ruleKey)) n++;
+            if(items.get(row).get(col).equals(ruleValue)) n++;
         }
         return n;
         }
@@ -20,15 +20,15 @@ public class CountItem {
         items1.add(item2);
         items1.add(item3);
 
-        item1.add(0, "phone");
-        item1.add(1, "blue");
-        item1.add(2, "computer");
-        item2.add(0, "pixel");
-        item2.add(1, "silver");
-        item2.add(2, "lenovo");
-        item3.add(0, "phone");
-        item3.add(1, "gold");
-        item3.add(2, "iphone");
+        item1.add("phone");
+        item1.add("blue");
+        item1.add("computer");
+        item2.add("pixel");
+        item2.add("silver");
+        item2.add("lenovo");
+        item3.add("phone");
+        item3.add("gold");
+        item3.add("iphone");
 
         int r = countMatches(items1, "type", "phone");
         System.out.println(items1);
