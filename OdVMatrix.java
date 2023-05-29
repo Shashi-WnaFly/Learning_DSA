@@ -1,7 +1,15 @@
 package DSA;
 
 public class OdVMatrix {
-    public static int oddValMat(int[][] indices, int m, int n) {
+//    public static int addValMat(int[][] indices, int m, int n){
+//        int[] r = new int[m];
+//        int[] c = new int[n];
+//        for(int i = 0; i<r.length; i++){
+//            r[indices[0][i]]++;
+//            c[indices[]]
+//        }
+//    }
+      public static int oddValMat(int[][] indices, int m, int n) {
         int[][] mat = new int[m][n];
         int odd = 0;
         for (int i = 0; i < indices.length; i++) {
