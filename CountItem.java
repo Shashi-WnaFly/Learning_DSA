@@ -6,8 +6,8 @@ public class CountItem {
         int n = 0, col=0;
         if(ruleKey.equals("color")) col = 1;
         else if(ruleKey.equals("name"))col = 2;
-        for(int row = 0; row<items.size(); row++){
-            if(items.get(row).get(col).equals(ruleValue)) n++;
+        for (List<String> item : items) {
+            if (item.get(col).equals(ruleValue)) n++;
         }
         return n;
         }
