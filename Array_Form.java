@@ -1,12 +1,28 @@
 package DSA;
 
 import java.util.*;
-// Add To Array-Form Of Integer.
+// Leetcode --> 989. Add to Array-Form of Integer
 public class Array_Form {
     public static List<Integer> addToArrayForm(int[] num, int k) {
 
+        LinkedList<Integer> num1 = new LinkedList<>();
+        int carry = k, sum, l = num.length-1;
+
+        for(int i = l; i>=0; i--){
+
+            sum = carry + num[i];
+            num1.addFirst(sum%10);
+            carry = sum/10;
+
+        }
+        if(carry != 0){
+            num1.addFirst(carry);
+        }
+        return num1;
     }
-    // My solution after trying much time.
+
+    // My solution after trying so much time.
+
 //    public static int count(long l){
 //        int c = 0;
 //        while(l>0){
@@ -44,13 +60,8 @@ public class Array_Form {
 //    }
 
     public static void main(String[] args) {
-//        int[] num = {1,2,6,3,0,7,1,7,1,9,7,5,6,6,4,4,0,0,6,3};
-//        int k = 516;
-
-        int[] num = {2, 1, 5};
-        int k = 806;
+        int[] num = {1,2,6,3,0,7,1,7,1,9,7,5,6,6,4,4,0,0,6,3};
+        int k = 516;
         System.out.println(addToArrayForm(num, k));
-        System.out.println(Long.MAX_VALUE);
-        //[1,2,6,3,0,7,1,7,1,9,7,5,6,6,4,4,0,5,7,9]
     }
 }
