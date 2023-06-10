@@ -2,41 +2,37 @@ package DSA;
 
 import java.util.ArrayList;
 import java.util.List;
-
+// Leetcode --> 1380. Lucky Numbers in a Matrix
 public class UniqueN {
-    public static List<Integer> luckyNumbers(int[][] matrix) {
+    public static List<Integer> luckyNumbers(int[][] ma) {
+
         List<Integer> lucky = new ArrayList<>();
-        int c = 0;
+        int c = 0, l, m = ma.length, n = ma[0].length;
         boolean check;
-        for (int i = 0; i < matrix.length; i++) {
+
+        for (int i = 0; i < m; i++) {
             check = true;
-            lucky.add(0, matrix[i][0]);
-            for (int j = 1; j < matrix[i].length; j++) {
-                if (matrix[i][j] < lucky.get(0)) {
-                    lucky.remove(0);
-                    lucky.add(0, matrix[i][j]);
+            l = ma[i][0];
+            for (int j = 1; j < n; j++) {
+                if (ma[i][j] < l) {
+                    l = ma[i][j];
                     c = j;
                 }
             }
 
-            for (int k = 0; k < matrix.length; k++) {
-                if (matrix[k][c] > lucky.get(0)) {
+            for (int k = 0; k < m; k++) {
+                if (ma[k][c] > l) {
                     check = false;
-                    lucky.remove(0);
                     break;
                 }
             }
-
-            if (check) {
-                lucky.remove(0);
-                lucky.add(matrix[i][c]);
-            }
+            if (check) lucky.add(ma[i][c]);
         }
         return lucky;
     }
 
     public static void main(String[] args) {
-        int[][] mat = {{7, 8}, {1, 2}};
+        int[][] mat = {{1,10,4,2}, {9,3,8,7}, {15,16,17,12}};
         System.out.println(luckyNumbers(mat));
     }
 }
