@@ -1,23 +1,23 @@
 package DSA;
 
-// Leetcode --> 53. Maximum Subarray
 public class MSubArr {
-    public static int maxSubArray(int[] nums) {
+    public static int maxSubArray(int[] nums){
+        int max = Integer.MIN_VALUE;
+        for(int i=0; i<nums.length; i++){
+            int sum = 0;
+            for(int j = i; j<nums.length; j++){
 
-        int max = Integer.MIN_VALUE, sum = 0, i = 0, l = nums.length;
-        for (; i < l; i++) {
-
-
-            sum += nums[i];
-            max = Math.max(sum, max);
-
-            if (0 > sum) sum = 0;
+                sum += nums[j];
+                if (max < sum){
+                    max = sum;
+                }
+            }
         }
-        return max;
+    return max;
     }
 
     public static void main(String[] args) {
-        int[] num = {-2, 1, -3, 4, -1, 2, 1, -5, 3};
-        System.out.println(maxSubArray(num));
+        int[] net = {-2,1,-3,4,-1,2,1,-5,4};
+        System.out.println(maxSubArray(net));
     }
 }
