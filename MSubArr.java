@@ -17,7 +17,7 @@ public class MSubArr {
     }
 
     public static void main(String[] args) {
-        int[] net = {-2,1,-3,4,-1,2,1,-5,4};
+        int[] net = {-2,1,-3,4,-1,2,1,-5,3};
         System.out.println(maxSubArray(net));
     }
 }
