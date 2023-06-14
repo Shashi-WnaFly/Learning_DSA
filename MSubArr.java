@@ -1,19 +1,16 @@
 package DSA;
+// Leetcode --> 53. Maximum Subarray
 
 public class MSubArr {
-    public static int maxSubArray(int[] nums){
-        int max = Integer.MIN_VALUE;
-        for(int i=0; i<nums.length; i++){
-            int sum = 0;
-            for(int j = i; j<nums.length; j++){
+    int max = Integer.MIN_VALUE, i = 0, sum = 0, l = nums.length;
+        for(; i<l; i++){
 
-                sum += nums[j];
-                if (max < sum){
-                    max = sum;
-                }
+                sum += nums[i];
+                max = Math.max(sum, max);
+
+                if(sum<0) sum = 0;
             }
-        }
-    return max;
+        return max;
     }
 
     public static void main(String[] args) {
