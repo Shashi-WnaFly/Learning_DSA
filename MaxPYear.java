@@ -1,6 +1,6 @@
 package DSA;
 
-// Leetcode --> 1854. Maximum Population Year.
+// Leetcode --> 1854. Maximum Population Year
 public class MaxPYear{
     public static int maximumPopulation(int[][] logs){
     int[] nLogs = new int[101];
