@@ -7,8 +7,8 @@ public class BinSearch {
         if(nums[0] == target) return 0;
 
         while(start <= end){
-            mid = start + (end - start)/2;
 
+            mid = start + (end - start)/2;
             if (nums[mid] == target) return mid;
 
             else if(nums[mid] < target){
