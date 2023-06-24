@@ -1,4 +1,4 @@
-package DSA.Searching;
+package Learning_DSA.Searching;
 // Leetcode --> 704. Binary Search
 public class BinSearch {
     public static int search(int[] nums, int target) {

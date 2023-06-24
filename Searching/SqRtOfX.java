@@ -1,4 +1,4 @@
-package DSA.Searching;
+package Learning_DSA.Searching;
 
 // Leetcode --> 69. Sqrt(x)
 public class SqRtOfX {

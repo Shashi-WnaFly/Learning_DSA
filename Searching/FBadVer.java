@@ -1,4 +1,4 @@
-package DSA.Searching;
+package Learning_DSA.Searching;
 // Leetcode --> 278. First Bad Version
 
 public class FBadVer {

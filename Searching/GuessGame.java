@@ -1,4 +1,4 @@
-package DSA.Searching;
+package Learning_DSA.Searching;
 
 // Leetcode --> 374. Guess Number Higher or Lower
 public class GuessGame {
