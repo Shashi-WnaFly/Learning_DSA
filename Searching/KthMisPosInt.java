@@ -3,24 +3,34 @@ package Learning_DSA.Searching;
 // Leetcode --> 1539. Kth Missing Positive Number.
 
 public class KthMisPosInt {
+//    public static int findKthPositive(int[] arr, int k) {
+//
+//        int start = 0, end = arr.length, num = 1, missing = 0;
+//
+//        while(missing != k)
+//        {
+//
+//            if(start < end && num != arr[start]) missing++;
+//
+//            else if(start >= end) missing++;
+//
+//            else{
+//                start++;
+//            }
+//
+//            num++;
+//        }
+//        return (num - 1);
+//    }
     public static int findKthPositive(int[] arr, int k) {
 
-        int start = 0, end = arr.length, num = 1, missing = 0;
+        for(int element : arr) {
 
-        while(missing != k)
-        {
+            if(element <= k) k++;
 
-            if(start < end && num != arr[start]) missing++;
-
-            else if(start >= end) missing++;
-
-            else{
-                start++;
-            }
-
-            num++;
+            else break;
         }
-        return (num - 1);
+        return k;
     }
 
     public static void main(String[] args) {
