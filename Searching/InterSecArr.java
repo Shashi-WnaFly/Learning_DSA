@@ -1,4 +1,4 @@
-package Learning_DSA.Searching;]
+package Learning_DSA.Searching;
 
 // Leetcode --> 349. Intersection of Two Arrays.
 class InterSecArr {
