@@ -1,8 +1,9 @@
 package Learning_DSA.Sorting;
 // Leetcode --> 628. Maximum Product of Three Numbers
-// it takes 584ms by selection sort.
 class MaxProduct {
-    public static int index(int[] arr, int last){
+// it takes 584ms by selection sort.
+    
+/*    public static int index(int[] arr, int last){
         int max = -1001, index = -1;
         for(int i = 0; i <= last; i++){
             if(arr[i] > max){
@@ -39,5 +40,53 @@ class MaxProduct {
             max_product *= nums[nums.length-1-i];
         }
         return (max2 > max_product) ? max2 : max_product;
+    } */
+
+    // ******** second approach and it takes 3ms  *********
+    public static int max_i(int[] arr, int last){
+        int max = -1001, index = -1;
+        for(int i = 0; i <= last; i++){
+            if(arr[i] > max){
+                max = arr[i];
+                index = i;
+            }
+        }
+        return index;
+    }
+    public static void swap(int[] arr, int f, int l){
+        int temp = arr[f];
+        arr[f] = arr[l];
+        arr[l] = temp;
+    }
+
+    public static int[] sort(int[] arr){
+        for(int i = 0; i < 3; i++){
+            int ind = max_i(arr, arr.length-1-i);
+            swap(arr, arr.length-1-i, ind);
+        }
+        return arr;
+    }
+
+    public int maximumProduct(int[] nums) {
+        int ind = -1, j = 0;
+
+        sort(nums);
+
+        while(j < 2){
+            int minmax = 1001;
+            for(int i = j; i < nums.length; i++){
+                if(nums[i] < minmax){
+                    minmax = nums[i];
+                    ind = i;
+                }
+            }
+            swap(nums, j++, ind);
+        }
+
+        int max2 = nums[0] * nums[1] * nums[nums.length-1];
+
+        int minmax = nums[nums.length-1]*nums[nums.length-2]*nums[nums.length-3];
+        System.gc();
+        return (max2 > minmax) ? max2 : minmax;
     }
 }
