@@ -1,7 +1,7 @@
 package Learning_DSA.Sorting;
 // Leetcode --> 922. Sort Array By Parity II
 
-class Solution {
+class ArrParity2 {
     
     public int[] sortArrayByParityII(int[] nums) {
 
