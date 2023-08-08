@@ -20,4 +20,17 @@ class SqSortedArr {
         }
         return nums;
     }
+// second solution 
+    public int[] sortedSquares(int[] nums) {
+
+        int n = nums.length, i = 0, k = n-1;
+        int[] SqSortedArr = new int[n--];
+
+        while(i <= n){
+            SqSortedArr[k--] = (nums[i]*nums[i] > nums[n]*nums[n]) ? nums[i]*nums[i++] : nums[n]*nums[n--];
+        }
+        
+        return SqSortedArr;
+    }
+    
 }
