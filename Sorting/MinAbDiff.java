@@ -2,7 +2,7 @@ package Learning_DSA.Sorting;
 import java.util.Arrays;
 // Leetcode --> 1200. Minimum Absolute Difference
 
-class Solution {
+class MinAbDiff {
     public List<List<Integer>> minimumAbsDifference(int[] arr) {
 
         Arrays.sort(arr);
