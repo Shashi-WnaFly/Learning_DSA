@@ -1,6 +1,6 @@
 package Learning_DSA.Sorting;
 // Leetcode --> 1365. How Many Numbers Are Smaller Than the Current Number
-class Solution {
+class SmlerCurr {
     public int[] smallerNumbersThanCurrent(int[] nums) {
 
         int i, j, cnt, n = nums.length;
