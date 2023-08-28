@@ -7,7 +7,7 @@ class LongPrefix {
         int n = strs.length;
         StringBuilder sb = new StringBuilder();
 
-        if(strs[0].equals("")) return "";
+        if(strs[0].isEmpty()) return "";
         for(int i = 0; i < strs[0].length(); i++){
 
             int cnt = 0;
