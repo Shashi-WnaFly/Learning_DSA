@@ -1,7 +1,7 @@
 package Learing_DSA.String;
 // Leetcode --> 1616. Split Two Strings to Make Palindrome
 
-class Split2Palin {
+class MSplit2Palin {
     public boolean checkPalindromeFormation(String a, String b) {
         StringBuilder sa = new StringBuilder(a);
         StringBuilder sb = new StringBuilder(b);
@@ -22,5 +22,28 @@ class Split2Palin {
             if((pa+sb.toString()).contentEquals(q.reverse())) return true;
         }
         return false;
+    }
+    
+    // Second Approach _________________________
+    public boolean checkPalindrome(String a, int l, int r){
+        while(l < r){
+            if(a.charAt(l) != a.charAt(r)) break;
+            l++;
+            r--;
+        }
+        return l >= r;
+    }
+    public boolean checkPalindrome(String a, String b){
+        int l = 0, r = a.length()-1;
+        while(l < r){
+            if(a.charAt(l) != b.charAt(r)) break;
+            l++;
+            r--;
+        }
+        return checkPalindrome(a, l, r) || checkPalindrome(b, l, r);
+    }
+    public boolean checkPalindromeFormation(String a, String b) {
+
+        return checkPalindrome(a, b) || checkPalindrome(b, a);
     }
 }
