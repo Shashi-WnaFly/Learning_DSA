@@ -4,7 +4,7 @@ package Learning_DSA.String;
 class Solution {
 
   // _______ this solution is TLE
-    public static int numWays(String s) {
+    /* public static int numWays(String s) {
         int mod = 1_000_000_007;
         int count_1 = 0;
         int n = s.length();
@@ -30,5 +30,29 @@ class Solution {
             }
         }
         return numWays % 10000);
+    }  */
+
+  // ________________ second solution and this takes 9ms ______________________
+  public static int numWays(String s) {
+        int mod = 1_000_000_007;
+        int count_1 = 0;
+        int n = s.length();
+        for (int i = 0; i < n; i++) {
+            count_1 += s.charAt(i) - '0';
+        }
+        if(count_1 == 0) return (int)( (n-2L)*(n-1L) / 2 % mod);
+        int numWays = 0;
+        if (count_1 % 3 != 0) return numWays;
+            count_1 /= 3;
+            long numWayOfFirstCut = 0;
+            long numWayOfSecondCut = 0;
+        for (int i = 0, matchOne = 0; i < n; i++) {
+            matchOne += s.charAt(i) - '0';
+
+            if (matchOne == count_1) numWayOfFirstCut++;
+
+            else if (matchOne == 2*count_1) numWayOfSecondCut++;
+        }
+        return (int)(numWayOfFirstCut * numWayOfSecondCut % mod);
     }
 }
