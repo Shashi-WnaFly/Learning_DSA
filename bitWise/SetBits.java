@@ -1,5 +1,5 @@
 // Leetcode --> 191. Number of 1 Bits
-public class Solution {
+public class SetBits {
     // you need to treat n as an unsigned value
     public int hammingWeight(int n) {
        int one_bit = 0;
