@@ -1,5 +1,5 @@
-// 137. Single Number II
-class Solution {
+// Leetcode --> 137. Single Number II
+class M_Single_Num {
     public int singleNumber(int[] nums) {
         int len = nums.length;
         int unique = 0;
